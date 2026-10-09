@@ -1,0 +1,62 @@
+{
+  "name": "toolatrium-tool-discovery-mcp",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.32.1",
+  "description": "Read-only MCP tools for AI tool search briefs, evidence-weighted candidate ranking, comparison audits, and canonical ToolAtrium resources.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "toolatrium-tool-discovery-mcp": "bin/toolatrium-tool-discovery-mcp.js"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "openclaw/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "node scripts/smoke-mcp-client.mjs",
+    "validate": "pnpm typecheck && pnpm test && pnpm build && pnpm smoke"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-tools",
+    "saas-directory",
+    "software-comparison",
+    "openclaw"
+  ],
+  "author": {
+    "name": "ToolAtrium",
+    "url": "https://toolatrium.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpt-img-2/toolatrium-tool-discovery-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gpt-img-2/toolatrium-tool-discovery-mcp/issues"
+  },
+  "homepage": "https://toolatrium.com/explore",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.3.1",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
